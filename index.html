@@ -1,653 +1,842 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CIEC</title>
-    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.9.2/tailwind.min.css"> -->
-    <link rel="stylesheet" href="src/output.css">
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <!-- Small CSS to Hide elements at 1520px size -->
-    <style>
-        @media(max-width:1520px) {
-            .left-svg {
-                display: none;
-            }
-        }
+  <!-- Necesidades Básicas de la Página
+  ================================================== -->
+  <meta charset="utf-8">
+  <title>Cámara de las Industrias del Estado Carabobo (CIEC)</title>
 
-        /* small css for the mobile nav close */
-        #nav-mobile-btn.close span:first-child {
-            transform: rotate(45deg);
-            top: 4px;
-            position: relative;
-            background: #a0aec0;
-        }
+  <!-- Metas Específicas para Móviles
+  ================================================== -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Página de la Cámara de las Industrias del Estado Carabobo">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 
-        #nav-mobile-btn.close span:nth-child(2) {
-            transform: rotate(-45deg);
-            margin-top: 0px;
-            background: #a0aec0;
-        }
-    </style>
+  <!-- Favicon
+  ================================================== -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <!-- CSS
+  ================================================== -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="plugins/fontawesome/css/all.min.css">
+  <!-- Animation -->
+  <link rel="stylesheet" href="plugins/animate-css/animate.css">
+  <!-- slick Carousel -->
+  <link rel="stylesheet" href="plugins/slick/slick.css">
+  <link rel="stylesheet" href="plugins/slick/slick-theme.css">
+  <!-- Colorbox -->
+  <link rel="stylesheet" href="plugins/colorbox/colorbox.css">
+  <!-- Estilos de la plantilla -->
+  <link rel="stylesheet" href="css/style.css">
+
 </head>
 
-<body class="overflow-x-hidden antialiased">
-    <!-- Header Section -->
-    <header class="relative z-50 w-full h-24">
-        <div
-            class="container flex items-center justify-center h-full max-w-6xl px-8 mx-auto sm:justify-between xl:px-0">
+<body>
+  <div class="body-inner">
 
-            <a href="/" class="relative flex items-center inline-block h-5 h-full font-black leading-none">
-                <img alt="Logo" viewBox="0 0 194 116" class="w-32 h-auto text-indigo-600 fill-current"
-                    src="/imgs/logo.svg">
-                <span class="ml-3 text-xl text-gray-800"><span class="text-yellow-500"></span></span>
-            </a>
+    <!-- Barra Superior -->
+    <div id="top-bar" class="top-bar">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-8">
+            <ul class="top-info text-center text-md-left">
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <p class="info-text">Av. Bolívar, Valencia, Estado Carabobo, Venezuela</p>
+              </li>
+            </ul>
+          </div>
+          <!--/ Información Superior -->
 
-            <nav id="nav"
-                class="absolute top-0 left-0 z-50 flex flex-col items-center justify-between hidden w-full h-64 pt-5 mt-24 text-sm text-gray-800 bg-white border-t border-gray-200 md:w-auto md:flex-row md:h-24 lg:text-base md:bg-transparent md:mt-0 md:border-none md:py-0 md:flex md:relative">
-                <a href="#"
-                    class="ml-0 mr-0 font-bold duration-100 md:ml-12 md:mr-3 lg:mr-8 transition-color hover:text-indigo-600">Inicio</a>
-                <a href="#features"
-                    class="mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-indigo-600">Servicios</a>
-                <a href="#pricing"
-                    class="mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-indigo-600">Espacios</a>
-                <a href="#testimonials"
-                    class="font-bold duration-100 transition-color hover:text-indigo-600">Eventos</a>
-                <div class="flex flex-col block w-full font-medium border-t border-gray-200 md:hidden">
-                    <a href="#_" class="w-full py-2 font-bold text-center text-pink-500">Login</a>
-                    <a href="#_"
-                        class="relative inline-block w-full px-5 py-3 text-sm leading-none text-center text-white bg-indigo-700 fold-bold">Get
-                        Started</a>
-                </div>
-            </nav>
-
-            <div
-                class="absolute left-0 flex-col items-center justify-center hidden w-full pb-8 mt-48 border-b border-gray-200 md:relative md:w-auto md:bg-transparent md:border-none md:mt-0 md:flex-row md:p-0 md:items-end md:flex md:justify-between">
-                <a href="#_"
-                    class="relative z-40 px-3 py-2 mr-0 text-sm font-bold text-pink-500 md:px-5 lg:text-white sm:mr-3 md:mt-0">Redes</a>
-                <a href="#_" class="relative z-40 inline-block w-auto h-full px-5 py-3 
-                    text-sm font-bold leading-none text-white transition-all transition duration-100 duration-300 bg-indigo-700 
-                    rounded shadow-md fold-bold lg:bg-white lg:text-indigo-700 sm:w-full 
-                    lg:shadow-none hover:shadow-xl">Contactanos</a>
-                <svg class="absolute top-0 left-0 hidden w-screen max-w-3xl -mt-64 -ml-12 lg:block"
-                    viewBox="0 0 818 815" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <defs>
-                        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="c">
-                            <stop stop-color="#fbb03b" offset="0%" />
-                            <stop stop-color="#FC3832" offset="100%" />
-                        </linearGradient>
-                        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="f">
-                            <stop stop-color="#657DE9" offset="0%" />
-                            <stop stop-color="#1C0FD7" offset="100%" />
-                        </linearGradient>
-                        <filter x="-4.7%" y="-3.3%" width="109.3%" height="109.3%" filterUnits="objectBoundingBox"
-                            id="a">
-                            <feOffset dy="8" in="SourceAlpha" result="shadowOffsetOuter1" />
-                            <feGaussianBlur stdDeviation="8" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
-                            <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0" in="shadowBlurOuter1" />
-                        </filter>
-                        <filter x="-4.7%" y="-3.3%" width="109.3%" height="109.3%" filterUnits="objectBoundingBox"
-                            id="d">
-                            <feOffset dy="8" in="SourceAlpha" result="shadowOffsetOuter1" />
-                            <feGaussianBlur stdDeviation="8" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
-                            <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0" in="shadowBlurOuter1" />
-                        </filter>
-                        <path
-                            d="M160.52 108.243h497.445c17.83 0 24.296 1.856 30.814 5.342 6.519 3.486 11.635 8.602 15.12 15.12 3.487 6.52 5.344 12.985 5.344 30.815v497.445c0 17.83-1.857 24.296-5.343 30.814-3.486 6.519-8.602 11.635-15.12 15.12-6.52 3.487-12.985 5.344-30.815 5.344H160.52c-17.83 0-24.296-1.857-30.814-5.343-6.519-3.486-11.635-8.602-15.12-15.12-3.487-6.52-5.343-12.985-5.343-30.815V159.52c0-17.83 1.856-24.296 5.342-30.814 3.486-6.519 8.602-11.635 15.12-15.12 6.52-3.487 12.985-5.343 30.815-5.343z"
-                            id="b" />
-                        <path
-                            d="M159.107 107.829H656.55c17.83 0 24.296 1.856 30.815 5.342 6.518 3.487 11.634 8.602 15.12 15.12 3.486 6.52 5.343 12.985 5.343 30.816V656.55c0 17.83-1.857 24.296-5.343 30.815-3.486 6.518-8.602 11.634-15.12 15.12-6.519 3.486-12.985 5.343-30.815 5.343H159.107c-17.83 0-24.297-1.857-30.815-5.343-6.519-3.486-11.634-8.602-15.12-15.12-3.487-6.519-5.343-12.985-5.343-30.815V159.107c0-17.83 1.856-24.297 5.342-30.815 3.487-6.519 8.602-11.634 15.12-15.12 6.52-3.487 12.985-5.343 30.816-5.343z"
-                            id="e" />
-                    </defs>
-                    <g fill="none" fill-rule="evenodd" opacity=".9">
-                        <g transform="rotate(65 416.452 409.167)">
-                            <use fill="#000" filter="url(#a)" xlink:href="#b" />
-                            <use fill="url(#c)" xlink:href="#b" />
-                        </g>
-                        <g transform="rotate(29 421.929 414.496)">
-                            <use fill="#000" filter="url(#d)" xlink:href="#e" />
-                            <use fill="url(#f)" xlink:href="#e" />
-                        </g>
-                    </g>
-                </svg>
-            </div>
-
-            <div id="nav-mobile-btn"
-                class="absolute top-0 right-0 z-50 block w-6 mt-8 mr-10 cursor-pointer select-none md:hidden sm:mt-10">
-                <span class="block w-full h-1 mt-2 duration-200 transform bg-gray-800 rounded-full sm:mt-1"></span>
-                <span class="block w-full h-1 mt-1 duration-200 transform bg-gray-800 rounded-full"></span>
-            </div>
-
-        </div>
-    </header>
-    <!-- End Header Section-->
-
-    <!-- BEGIN HERO SECTION -->
-    <div class="relative items-center justify-center w-full overflow-x-hidden lg:pt-40 lg:pb-40 xl:pt-40 xl:pb-64">
-        <div
-            class="container flex flex-col items-center justify-between h-full max-w-6xl px-8 mx-auto -mt-32 lg:flex-row xl:px-0">
-            <div
-                class="z-30 flex flex-col items-center w-full max-w-xl pt-48 text-center lg:items-start lg:w-1/2 lg:pt-20 xl:pt-40 lg:text-left">
-                <h1 class="relative mb-4 text-3xl 
-                font-black leading-tight text-gray-900 
-                sm:text-6xl xl:mb-8">Acerca de nosotros</h1>
-                <p class="pr-0 mb-8 text-base text-gray-600 sm:text-lg xl:text-xl lg:pr-20">En la Cámara de Industriales
-                    del Estado Carabobo, nos dedicamos a representar y apoyar a las empresas, ofreciendo asesoría y
-                    defendiendo sus intereses. Fomentamos el desarrollo económico y la innovación, creando un entorno
-                    propicio para el crecimiento industrial. Nuestra labor se basa en la ética profesional y el
-                    compromiso con el fortalecimiento del sector industrial.
-                    Explora cómo otras empresas están mejorando su productividad y obteniendo espacios de mejora.
-                    Comparte experiencias y conoce las estrategias que están implementando para alcanzar el éxito</p>
-                <a href="#_" class="relative self-start 
-                    inline-block w-auto px-8 py-4 mx-auto mt-0 text-base 
-                    font-bold text-white bg-indigo-600 border-t 
-                    border-gray-200 rounded-md shadow-xl sm:mt-1 
-                    fold-bold lg:mx-0">Contactanos hoy!</a>
-                <!-- Integrates with section -->
-                <div class="flex-col hidden mt-12 sm:flex lg:mt-24">
-                    <p class="mb-4 text-sm font-medium tracking-widest text-gray-500 uppercase">Contactanos a través de
-                    </p>
-                    <div class="flex">
-                        <!-- Facebook -->
-                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40"
-                            viewBox="0 0 30 30">
-                            <path
-                                d="M15,3C8.373,3,3,8.373,3,15c0,6.016,4.432,10.984,10.206,11.852V18.18h-2.969v-3.154h2.969v-2.099c0-3.475,1.693-5,4.581-5 c1.383,0,2.115,0.103,2.461,0.149v2.753h-1.97c-1.226,0-1.654,1.163-1.654,2.473v1.724h3.593L19.73,18.18h-3.106v8.697 C22.481,26.083,27,21.075,27,15C27,8.373,21.627,3,15,3z">
-                            </path>
-                        </svg>
-
-                        <!-- Instagram -->
-                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40"
-                            viewBox="0 0 30 30">
-                            <path
-                                d="M 9.9980469 3 C 6.1390469 3 3 6.1419531 3 10.001953 L 3 20.001953 C 3 23.860953 6.1419531 27 10.001953 27 L 20.001953 27 C 23.860953 27 27 23.858047 27 19.998047 L 27 9.9980469 C 27 6.1390469 23.858047 3 19.998047 3 L 9.9980469 3 z M 22 7 C 22.552 7 23 7.448 23 8 C 23 8.552 22.552 9 22 9 C 21.448 9 21 8.552 21 8 C 21 7.448 21.448 7 22 7 z M 15 9 C 18.309 9 21 11.691 21 15 C 21 18.309 18.309 21 15 21 C 11.691 21 9 18.309 9 15 C 9 11.691 11.691 9 15 9 z M 15 11 A 4 4 0 0 0 11 15 A 4 4 0 0 0 15 19 A 4 4 0 0 0 19 15 A 4 4 0 0 0 15 11 z">
-                            </path>
-                        </svg>
-
-                        <!-- WhatsApp -->
-                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40"
-                            viewBox="0 0 50 50">
-                            <path
-                                d="M25,2C12.318,2,2,12.318,2,25c0,3.96,1.023,7.854,2.963,11.29L2.037,46.73c-0.096,0.343-0.003,0.711,0.245,0.966 C2.473,47.893,2.733,48,3,48c0.08,0,0.161-0.01,0.24-0.029l10.896-2.699C17.463,47.058,21.21,48,25,48c12.682,0,23-10.318,23-23 S37.682,2,25,2z M36.57,33.116c-0.492,1.362-2.852,2.605-3.986,2.772c-1.018,0.149-2.306,0.213-3.72-0.231 c-0.857-0.27-1.957-0.628-3.366-1.229c-5.923-2.526-9.791-8.415-10.087-8.804C15.116,25.235,13,22.463,13,19.594 s1.525-4.28,2.067-4.864c0.542-0.584,1.181-0.73,1.575-0.73s0.787,0.005,1.132,0.021c0.363,0.018,0.85-0.137,1.329,1.001 c0.492,1.168,1.673,4.037,1.819,4.33c0.148,0.292,0.246,0.633,0.05,1.022c-0.196,0.389-0.294,0.632-0.59,0.973 s-0.62,0.76-0.886,1.022c-0.296,0.291-0.603,0.606-0.259,1.19c0.344,0.584,1.529,2.493,3.285,4.039 c2.255,1.986,4.158,2.602,4.748,2.894c0.59,0.292,0.935,0.243,1.279-0.146c0.344-0.39,1.476-1.703,1.869-2.286 s0.787-0.487,1.329-0.292c0.542,0.194,3.445,1.604,4.035,1.896c0.59,0.292,0.984,0.438,1.132,0.681 C37.062,30.587,37.062,31.755,36.57,33.116z">
-                            </path>
-                        </svg>
-                    </div>
-                </div>
-
-                <svg class="absolute left-0 max-w-md mt-24 -ml-64 left-svg" viewBox="0 0 423 423"
-                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <defs>
-                        <linearGradient x1="100%" y1="0%" x2="4.48%" y2="0%" id="linearGradient-1">
-                            <stop stop-color="#5C54DB" offset="0%" />
-                            <stop stop-color="#6A82E7" offset="100%" />
-                        </linearGradient>
-                        <filter x="-9.3%" y="-6.7%" width="118.7%" height="118.7%" filterUnits="objectBoundingBox"
-                            id="filter-3">
-                            <feOffset dy="8" in="SourceAlpha" result="shadowOffsetOuter1" />
-                            <feGaussianBlur stdDeviation="8" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
-                            <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" in="shadowBlurOuter1" />
-                        </filter>
-                        <rect id="path-2" x="63" y="504" width="300" height="300" rx="40" />
-                    </defs>
-                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity=".9">
-                        <g id="Desktop-HD" transform="translate(-39 -531)">
-                            <g id="Hero" transform="translate(43 83)">
-                                <g id="Rectangle-6" transform="rotate(45 213 654)">
-                                    <use fill="#000" filter="url(#filter-3)" xlink:href="#path-2" />
-                                    <use fill="url(#linearGradient-1)" xlink:href="#path-2" />
-                                </g>
-                            </g>
-                        </g>
-                    </g>
-                </svg>
-            </div>
-            <div class="relative z-50 flex flex-col items-end justify-center w-full h-full lg:w-1/2 ms:pl-10">
-                <div class="container relative left-0 w-full max-w-4xl lg:absolute xl:max-w-6xl lg:w-screen">
-                    <img src="/imgs/pixelcut-export.png"
-                        class="w-full h-auto mt-20 mb-20 ml-0 lg:mt-24 xl:mt-40 lg:mb-0 lg:h-full lg:-ml-12">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- HERO SECTION END -->
-
-    <!-- BEGIN FEATURES SECTION -->
-    <div id="features" class="relative w-full px-8 py-10 border-t border-gray-200 md:py-16 lg:py-24 xl:py-40 xl:px-0">
-        <div class="container flex flex-col items-center justify-between h-full max-w-6xl mx-auto">
-            <h2 class="my-5 text-base font-medium tracking-tight text-indigo-500 uppercase">Nuestros servicios</h2>
-            <h3
-                class="max-w-2xl px-5 mt-2 text-3xl font-black leading-tight text-center text-gray-900 sm:mt-0 sm:px-0 sm:text-6xl">
-                Disfruta de los servicios que podemos ofrecer</h3>
-            <div class="flex flex-col w-full mt-0 lg:flex-row sm:mt-10 lg:mt-20">
-
-                <div class="w-full max-w-md p-4 mx-auto mb-0 sm:mb-16 lg:mb-0 lg:w-1/3">
-                    <div class="relative flex flex-col items-center justify-center w-full h-full p-20 mr-5 rounded-lg">
-                        <svg class="absolute w-full h-full text-gray-100 fill-current" viewBox="0 0 377 340"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <g>
-                                <g>
-                                    <path
-                                        d="M342.8 3.7c24.7 14 18.1 75 22.1 124s18.6 85.8 8.7 114.2c-9.9 28.4-44.4 48.3-76.4 62.4-32 14.1-61.6 22.4-95.9 28.9-34.3 6.5-73.3 11.1-95.5-6.2-22.2-17.2-27.6-56.5-47.2-96C38.9 191.4 5 151.5.9 108.2-3.1 64.8 22.7 18 61.8 8.7c39.2-9.2 91.7 19 146 16.6 54.2-2.4 110.3-35.6 135-21.6z" />
-                                </g>
-                            </g>
-                        </svg>
-                        <!-- FEATURE Icon 1 -->
-                        <svg class="relative w-20 h-20" viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <defs>
-                                <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="linearGradient-1TriangleIcon1">
-                                    <stop stop-color="#9C09DB" offset="0%" />
-                                    <stop stop-color="#1C0FD7" offset="100%" />
-                                </linearGradient>
-                                <filter x="-14%" y="-10%" width="128%" height="128%" filterUnits="objectBoundingBox"
-                                    id="filter-3TriangleIcon1">
-                                    <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1" />
-                                    <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1"
-                                        result="shadowBlurOuter1" />
-                                    <feColorMatrix
-                                        values="0 0 0 0 0.141176471 0 0 0 0 0.031372549 0 0 0 0 0.501960784 0 0 0 0.15 0"
-                                        in="shadowBlurOuter1" />
-                                </filter>
-                                <path
-                                    d="M17.947 0h14.106c6.24 0 8.503.65 10.785 1.87a12.721 12.721 0 015.292 5.292C49.35 9.444 50 11.707 50 17.947v14.106c0 6.24-.65 8.503-1.87 10.785a12.721 12.721 0 01-5.292 5.292C40.556 49.35 38.293 50 32.053 50H17.947c-6.24 0-8.503-.65-10.785-1.87a12.721 12.721 0 01-5.292-5.292C.65 40.556 0 38.293 0 32.053V17.947c0-6.24.65-8.503 1.87-10.785A12.721 12.721 0 017.162 1.87C9.444.65 11.707 0 17.947 0z"
-                                    id="path-2TriangleIcon1" />
-                            </defs>
-                            <g id="Page-1TriangleIcon1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <g id="Desktop-HDTriangleIcon1" transform="translate(-291 -1278)">
-                                    <g id="FeaturesTriangleIcon1" transform="translate(170 915)">
-                                        <g id="Group-9TriangleIcon1" transform="translate(0 365)">
-                                            <g id="Group-8TriangleIcon1" transform="translate(125)">
-                                                <g id="Rectangle-9TriangleIcon1">
-                                                    <use fill="#000" filter="url(#filter-3TriangleIcon1)"
-                                                        xlink:href="#path-2TriangleIcon1" />
-                                                    <use fill="url(#linearGradient-1TriangleIcon1)"
-                                                        xlink:href="#path-2TriangleIcon1" />
-                                                </g>
-                                                <g id="playTriangleIcon1" transform="translate(18 15)" fill="#FFF"
-                                                    fill-rule="nonzero">
-                                                    <path
-                                                        d="M9.432 2.023l8.919 14.879a1.05 1.05 0 01-.384 1.452 1.097 1.097 0 01-.548.146H-.42A1.07 1.07 0 01-1.5 17.44c0-.19.052-.375.15-.538L7.567 2.023a1.092 1.092 0 011.864 0z"
-                                                        id="TriangleIcon1" transform="rotate(90 8.5 10)" />
-                                                </g>
-                                            </g>
-                                        </g>
-                                    </g>
-                                </g>
-                            </g>
-                        </svg>
-                        <h4 class="relative mt-6 text-lg font-bold">Eventos</h4>
-                        <p class="relative mt-2 text-base text-center text-gray-600">Lorem, ipsum dolor sit amet
-                            consectetur adipisicing elit. Delectus placeat rem qui quod, recusandae temporibus
-                            perspiciatis repellat magnam. Doloremque totam modi cupiditate ab voluptates iure quisquam
-                            repellat maxime similique aspernatur!</p>
-                        <a href="#_" class="relative flex mt-2 text-sm font-medium text-indigo-500 underline">Learn
-                            More</a>
-                    </div>
-                </div>
-
-                <div class="w-full max-w-md p-4 mx-auto mb-0 sm:mb-16 lg:mb-0 lg:w-1/3">
-                    <div class="relative flex flex-col items-center justify-center w-full h-full p-20 mr-5 rounded-lg">
-                        <svg class="absolute w-full h-full text-gray-100 fill-current" viewBox="0 0 358 372"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <g>
-                                <g>
-                                    <path
-                                        d="M315.7 6.5c30.2 15.1 42.6 61.8 41.5 102.5-1.1 40.6-15.7 75.2-24.3 114.8-8.7 39.7-11.3 84.3-34.3 107.2-23 22.9-66.3 23.9-114.5 30.7-48.2 6.7-101.3 19.1-123.2-4.1-21.8-23.2-12.5-82.1-21.6-130.2C30.2 179.3 2.6 141.9.7 102c-2-39.9 21.7-82.2 57.4-95.6 35.7-13.5 83.3 2.1 131.2 1.7 47.9-.4 96.1-16.8 126.4-1.6z" />
-                                </g>
-                            </g>
-                        </svg>
-                        <!-- FEATURE Icon 2 -->
-                        <svg class="relative w-20 h-20" viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <defs>
-                                <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="linearGradient-1Icon2">
-                                    <stop stop-color="#F2C314" offset="0%" />
-                                    <stop stop-color="#FC3832" offset="100%" />
-                                </linearGradient>
-                                <filter x="-14%" y="-10%" width="128%" height="128%" filterUnits="objectBoundingBox"
-                                    id="filter-3Icon2">
-                                    <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1" />
-                                    <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1"
-                                        result="shadowBlurOuter1" />
-                                    <feColorMatrix
-                                        values="0 0 0 0 0.501960784 0 0 0 0 0.125490196 0 0 0 0 0 0 0 0 0.15 0"
-                                        in="shadowBlurOuter1" />
-                                </filter>
-                                <path
-                                    d="M17.947 0h14.106c6.24 0 8.503.65 10.785 1.87a12.721 12.721 0 015.292 5.292C49.35 9.444 50 11.707 50 17.947v14.106c0 6.24-.65 8.503-1.87 10.785a12.721 12.721 0 01-5.292 5.292C40.556 49.35 38.293 50 32.053 50H17.947c-6.24 0-8.503-.65-10.785-1.87a12.721 12.721 0 01-5.292-5.292C.65 40.556 0 38.293 0 32.053V17.947c0-6.24.65-8.503 1.87-10.785A12.721 12.721 0 017.162 1.87C9.444.65 11.707 0 17.947 0z"
-                                    id="path-2Icon2" />
-                            </defs>
-                            <g id="Page-1Icon2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <g id="Desktop-HDIcon2" transform="translate(-691 -1278)">
-                                    <g id="FeaturesIcon2" transform="translate(170 915)">
-                                        <g id="Group-9-CopyIcon2" transform="translate(400 365)">
-                                            <g id="Group-8Icon2" transform="translate(125)">
-                                                <g id="Rectangle-9Icon2">
-                                                    <use fill="#000" filter="url(#filter-3Icon2)"
-                                                        xlink:href="#path-2Icon2" />
-                                                    <use fill="url(#linearGradient-1Icon2)" xlink:href="#path-2Icon2" />
-                                                </g>
-                                                <g id="machine-learningIcon2" transform="translate(14 12)" fill="#FFF"
-                                                    fill-rule="nonzero">
-                                                    <path
-                                                        d="M10.554 21.418v-2.68c-1.1-.204-1.932-1.143-1.932-2.271 0-.468.143-.903.388-1.267l-2.32-1.662L4.367 15.2a2.254 2.254 0 01-.005 2.541l5.28 4.05c.268-.182.577-.311.911-.373zm.892 0c.334.062.643.191.912.373l5.28-4.05a2.254 2.254 0 01-.006-2.54l-2.321-1.663L12.99 15.2c.245.364.388.8.388 1.267 0 1.128-.832 2.067-1.932 2.27v2.681zm1.538.997c.25.365.394.803.394 1.274C13.378 24.965 12.314 26 11 26s-2.378-1.035-2.378-2.311c0-.471.145-.91.394-1.274l-5.28-4.05c-.385.26-.853.413-1.358.413C1.065 18.778 0 17.743 0 16.467c0-1.129.832-2.068 1.932-2.27v-2.393C.832 11.6 0 10.662 0 9.534c0-1.277 1.065-2.312 2.378-2.312.505 0 .973.153 1.358.414l5.28-4.05a2.254 2.254 0 01-.394-1.275C8.622 1.035 9.686 0 11 0s2.378 1.035 2.378 2.311c0 .471-.145.91-.394 1.274l5.28 4.05c.385-.26.853-.413 1.358-.413C20.935 7.222 22 8.257 22 9.533c0 1.129-.832 2.068-1.932 2.27v2.393c1.1.203 1.932 1.142 1.932 2.27 0 1.277-1.065 2.312-2.378 2.312-.505 0-.973-.153-1.358-.414l-5.28 4.05zm-9.243-7.843L5.937 13l-2.196-1.572c-.27.183-.58.314-.917.376v2.392c.336.062.647.193.917.376zm.627-3.772l2.321 1.662L9.01 10.8a2.254 2.254 0 01-.388-1.267c0-1.128.832-2.067 1.932-2.27V4.582a2.403 2.403 0 01-.912-.373l-5.28 4.05a2.254 2.254 0 01.006 2.54zm13.89 3.772c.27-.183.582-.314.918-.376v-2.392a2.403 2.403 0 01-.917-.376L16.063 13l2.196 1.572zm-.62-6.313l-5.28-4.05a2.403 2.403 0 01-.912.373v2.68c1.1.204 1.932 1.143 1.932 2.271 0 .468-.143.903-.388 1.267l2.32 1.662 2.322-1.662a2.254 2.254 0 01.005-2.541zm-8 6.313A2.415 2.415 0 0111 14.156c.507 0 .977.154 1.363.416L14.559 13l-2.196-1.572a2.415 2.415 0 01-1.363.416c-.507 0-.977-.154-1.363-.416L7.441 13l2.196 1.572zM11 10.978c.821 0 1.486-.647 1.486-1.445 0-.797-.665-1.444-1.486-1.444s-1.486.647-1.486 1.444c0 .798.665 1.445 1.486 1.445zm0 6.933c.821 0 1.486-.647 1.486-1.444 0-.798-.665-1.445-1.486-1.445s-1.486.647-1.486 1.445c0 .797.665 1.444 1.486 1.444zm8.622-6.933c.82 0 1.486-.647 1.486-1.445 0-.797-.665-1.444-1.486-1.444s-1.487.647-1.487 1.444c0 .798.666 1.445 1.487 1.445zm0 6.933c.82 0 1.486-.647 1.486-1.444 0-.798-.665-1.445-1.486-1.445s-1.487.647-1.487 1.445c0 .797.666 1.444 1.487 1.444zM2.378 10.978c.821 0 1.487-.647 1.487-1.445 0-.797-.666-1.444-1.487-1.444-.82 0-1.486.647-1.486 1.444 0 .798.665 1.445 1.486 1.445zm0 6.933c.821 0 1.487-.647 1.487-1.444 0-.798-.666-1.445-1.487-1.445-.82 0-1.486.647-1.486 1.445 0 .797.665 1.444 1.486 1.444zM11 25.133c.821 0 1.486-.646 1.486-1.444 0-.798-.665-1.445-1.486-1.445s-1.486.647-1.486 1.445.665 1.444 1.486 1.444zm0-21.377c.821 0 1.486-.647 1.486-1.445S11.821.867 11 .867s-1.486.646-1.486 1.444c0 .798.665 1.445 1.486 1.445z"
-                                                        id="ShapeIcon2" />
-                                                </g>
-                                            </g>
-                                        </g>
-                                    </g>
-                                </g>
-                            </g>
-                        </svg>
-                        <h4 class="relative mt-6 text-lg font-bold">Afiliate!</h4>
-                        <p class="relative mt-2 text-base text-center text-gray-600">Lorem ipsum dolor sit amet
-                            consectetur adipisicing elit. Cumque dicta commodi beatae, enim sit magni doloribus nisi,
-                            asperiores animi totam perspiciatis aut reprehenderit corrupti perferendis iusto sapiente
-                            unde excepturi eaque..</p>
-                        <a href="#_" class="relative flex mt-2 text-sm font-medium text-indigo-500 underline">Learn
-                            More</a>
-                    </div>
-                </div>
-
-                <div class="w-full max-w-md p-4 mx-auto mb-16 lg:mb-0 lg:w-1/3">
-                    <div class="relative flex flex-col items-center justify-center w-full h-full p-20 mr-5 rounded-lg">
-                        <svg class="absolute w-full h-full text-gray-100 fill-current" viewBox="0 0 378 410"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <g>
-                                <g>
-                                    <path
-                                        d="M305.9 14.4c23.8 24.6 16.3 84.9 26.6 135.1 10.4 50.2 38.6 90.3 43.7 137.8 5.1 47.5-12.8 102.4-50.7 117.4-37.9 15.1-95.7-9.8-151.7-12.2-56.1-2.5-110.3 17.6-130-3.4-19.7-20.9-4.7-82.9-11.5-131.2C25.5 209.5-3 174.7 1.2 147c4.2-27.7 41-48.3 75-69.6C110.1 56.1 141 34.1 184 17.5c43.1-16.6 98.1-27.7 121.9-3.1z" />
-                                </g>
-                            </g>
-                        </svg>
-                        <!-- FEATURE Icon 3 -->
-                        <svg class="relative w-20 h-20" viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <defs>
-                                <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="linearGradient-1Icon3">
-                                    <stop stop-color="#32FBFC" offset="0%" />
-                                    <stop stop-color="#3214F2" offset="100%" />
-                                </linearGradient>
-                                <filter x="-14%" y="-10%" width="128%" height="128%" filterUnits="objectBoundingBox"
-                                    id="filter-3Icon3">
-                                    <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1" />
-                                    <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1"
-                                        result="shadowBlurOuter1" />
-                                    <feColorMatrix
-                                        values="0 0 0 0 0.031372549 0 0 0 0 0.149019608 0 0 0 0 0.658823529 0 0 0 0.15 0"
-                                        in="shadowBlurOuter1" />
-                                </filter>
-                                <path
-                                    d="M17.947 0h14.106c6.24 0 8.503.65 10.785 1.87a12.721 12.721 0 015.292 5.292C49.35 9.444 50 11.707 50 17.947v14.106c0 6.24-.65 8.503-1.87 10.785a12.721 12.721 0 01-5.292 5.292C40.556 49.35 38.293 50 32.053 50H17.947c-6.24 0-8.503-.65-10.785-1.87a12.721 12.721 0 01-5.292-5.292C.65 40.556 0 38.293 0 32.053V17.947c0-6.24.65-8.503 1.87-10.785A12.721 12.721 0 017.162 1.87C9.444.65 11.707 0 17.947 0z"
-                                    id="path-2Icon3" />
-                            </defs>
-                            <g id="Page-1Icon3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <g id="Desktop-HDIcon3" transform="translate(-1091 -1278)">
-                                    <g id="FeaturesIcon3" transform="translate(170 915)">
-                                        <g id="Group-9-Copy-2Icon3" transform="translate(800 365)">
-                                            <g id="Group-8Icon3" transform="translate(125)">
-                                                <g id="Rectangle-9Icon3">
-                                                    <use fill="#000" filter="url(#filter-3Icon3)"
-                                                        xlink:href="#path-2Icon3" />
-                                                    <use fill="url(#linearGradient-1Icon3)" xlink:href="#path-2Icon3" />
-                                                </g>
-                                                <g id="smart-notificationsIcon3" transform="translate(15 11)"
-                                                    fill="#FFF" fill-rule="nonzero">
-                                                    <path
-                                                        d="M12.519 3.243a6.808 6.808 0 00-.187 1.298h-8.44a2.595 2.595 0 00-2.595 2.594v12.973a2.595 2.595 0 002.595 2.595h12.973a2.595 2.595 0 002.594-2.595v-8.44c.445-.02.88-.084 1.298-.187v8.627A3.892 3.892 0 0116.865 24H3.892A3.892 3.892 0 010 20.108V7.135a3.892 3.892 0 013.892-3.892h8.627zm6.616 6.487a4.865 4.865 0 110-9.73 4.865 4.865 0 010 9.73z"
-                                                        id="IconIcon3" />
-                                                </g>
-                                            </g>
-                                        </g>
-                                    </g>
-                                </g>
-                            </g>
-                        </svg>
-                        <h4 class="relative mt-6 text-lg font-bold">Instalaciones</h4>
-                        <p class="relative mt-2 text-base text-center text-gray-600">Lorem ipsum, dolor sit amet
-                            consectetur adipisicing elit. Incidunt, assumenda tempore excepturi eum in repellendus quo
-                            dolor similique unde iure reiciendis nobis! Ab, exercitationem aut aperiam non quaerat
-                            velit. Inventore!</p>
-                        <a href="#_" class="relative flex mt-2 text-sm font-medium text-indigo-500 underline">Learn
-                            More</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <!-- END FEATURES SECTION -->
-
-
-
-
-
-
-
-
-    <!-- Start Testimonials -->
-    <div id="testimonials"
-        class="flex items-center justify-center w-full px-8 py-10 border-t border-gray-200 md:py-16 lg:py-24 xl:py-40 xl:px-0">
-        <div class="max-w-6xl mx-auto">
-            <div class="flex-col items-center ">
-                <div class="flex flex-col items-center justify-center w-full h-full max-w-2xl pr-8 mx-auto text-center">
-                    <p class="my-5 text-base font-medium tracking-tight 
-                    text-indigo-500 uppercase">Nuestros afiliados han amado nuestros servicios</p>
-                    <h2
-                        class="text-4xl font-extrabold leading-10 tracking-tight text-gray-900 sm:text-5xl sm:leading-none md:text-6xl lg:text-5xl xl:text-6xl">
-                        Testimonios</h2>
-                    <p class="my-6 text-xl font-medium text-gray-500">No confíe sólo en nuestra palabra,
-                        lea nuestra extensa
-                        lista de estudios de casos y testimonios de clientes.</p>
-
-                </div>
-                <div class="flex flex-col items-center justify-center max-w-2xl py-8 mx-auto xl:flex-row xl:max-w-full">
-                    <div class="w-full xl:w-1/2 xl:pr-8">
-                        <blockquote
-                            class="flex flex-col-reverse items-center justify-between w-full col-span-1 p-6 text-center transition-all duration-200 bg-gray-100 rounded-lg md:flex-row md:text-left hover:bg-white hover:shadow ease">
-                            <div class="flex flex-col pr-8">
-                                <div class="relative pl-12">
-                                    <svg class="absolute left-0 w-10 h-10 text-indigo-500 fill-current"
-                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125">
-                                        <path
-                                            d="M30.7 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2C12.7 83.1 5 72.6 5 61.5c0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S30.7 31.6 30.7 42zM82.4 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2-11.8 0-19.5-10.5-19.5-21.6 0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S82.4 31.6 82.4 42z" />
-                                    </svg>
-                                    <p class="mt-2 text-base text-gray-600">I'm loving these templates! Very nice
-                                        features and layouts.
-                                    </p>
-                                </div>
-
-                                <h3 class="pl-12 mt-3 text-base font-medium leading-5 text-gray-800 truncate">Sandra
-                                    Walton <span class="mt-1 text-sm leading-5 text-gray-500 truncate">- CEO
-                                        SomeCompany</span></h3>
-                                <p class="mt-1 text-sm leading-5 text-gray-500 truncate"></p>
-                            </div>
-                            <img class="flex-shrink-0 object-cover w-24 h-24 mb-5 bg-gray-300 rounded-full md:mb-0"
-                                src="https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2694&q=80"
-                                alt="">
-                        </blockquote>
-                        <blockquote
-                            class="flex flex-col-reverse items-center justify-between w-full col-span-1 p-6 mt-16 mb-16 text-center transition-all duration-200 bg-gray-100 rounded-lg md:flex-row md:text-left hover:bg-white hover:shadow ease xl:mb-0">
-                            <div class="flex flex-col pr-10">
-                                <div class="relative pl-12">
-                                    <svg class="absolute left-0 w-10 h-10 text-indigo-500 fill-current"
-                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125">
-                                        <path
-                                            d="M30.7 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2C12.7 83.1 5 72.6 5 61.5c0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S30.7 31.6 30.7 42zM82.4 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2-11.8 0-19.5-10.5-19.5-21.6 0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S82.4 31.6 82.4 42z" />
-                                    </svg>
-                                    <p class="mt-2 text-base text-gray-600">Really digging this service. Now I can
-                                        quickly bootstrap any
-                                        project.</p>
-                                </div>
-                                <h3 class="pl-12 mt-3 text-base font-medium leading-5 text-gray-800 truncate">Kenny
-                                    Jones <span class="mt-1 text-sm leading-5 text-gray-500 truncate">- CEO
-                                        SomeCompany</span></h3>
-                                <p class="mt-1 text-sm leading-5 text-gray-500 truncate"></p>
-                            </div>
-                            <img class="flex-shrink-0 object-cover w-24 h-24 mb-5 bg-gray-300 rounded-full md:mb-0"
-                                src="https://images.unsplash.com/photo-1546820389-44d77e1f3b31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80"
-                                alt="">
-                        </blockquote>
-                    </div>
-                    <div class="w-full xl:w-1/2 xl:pl-8">
-                        <blockquote
-                            class="flex flex-col-reverse items-center justify-between w-full col-span-1 p-6 text-center transition-all duration-200 bg-gray-100 rounded-lg md:flex-row md:text-left hover:bg-white hover:shadow ease">
-                            <div class="flex flex-col pr-10">
-                                <div class="relative pl-12">
-                                    <svg class="absolute left-0 w-10 h-10 text-indigo-500 fill-current"
-                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125">
-                                        <path
-                                            d="M30.7 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2C12.7 83.1 5 72.6 5 61.5c0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S30.7 31.6 30.7 42zM82.4 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2-11.8 0-19.5-10.5-19.5-21.6 0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S82.4 31.6 82.4 42z" />
-                                    </svg>
-                                    <p class="mt-2 text-base text-gray-600">Extremely helpful in every single project we
-                                        have released.
-                                    </p>
-                                </div>
-
-                                <h3 class="pl-12 mt-3 text-base font-medium leading-5 text-gray-800 truncate">Mike Smith
-                                    <span class="mt-1 text-sm leading-5 text-gray-500 truncate">- CEO SomeCompany</span>
-                                </h3>
-                                <p class="mt-1 text-sm leading-5 text-gray-500 truncate"></p>
-                            </div>
-                            <img class="flex-shrink-0 object-cover w-24 h-24 mb-5 bg-gray-300 rounded-full md:mb-0"
-                                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1700&q=80"
-                                alt="">
-                        </blockquote>
-                        <blockquote
-                            class="flex flex-col-reverse items-center justify-between w-full col-span-1 p-6 mt-16 text-center transition-all duration-200 bg-gray-100 rounded-lg md:flex-row md:text-left hover:bg-white hover:shadow ease">
-                            <div class="flex flex-col pr-10">
-                                <div class="relative pl-12">
-                                    <svg class="absolute left-0 w-10 h-10 text-indigo-500 fill-current"
-                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125">
-                                        <path
-                                            d="M30.7 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2C12.7 83.1 5 72.6 5 61.5c0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S30.7 31.6 30.7 42zM82.4 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2-11.8 0-19.5-10.5-19.5-21.6 0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S82.4 31.6 82.4 42z" />
-                                    </svg>
-                                    <p class="mt-2 text-base text-gray-600">Finally a quick and easy system I can use
-                                        for any type of
-                                        project.</p>
-                                </div>
-
-                                <h3 class="pl-12 mt-3 text-base font-medium leading-5 text-gray-800 truncate">Molly
-                                    Sanchez <span class="mt-1 text-sm leading-5 text-gray-500 truncate">- CEO
-                                        SomeCompany</span></h3>
-                                <p class="mt-1 text-sm leading-5 text-gray-500 truncate"></p>
-                            </div>
-                            <img class="flex-shrink-0 object-cover w-24 h-24 mb-5 bg-gray-300 rounded-full md:mb-0"
-                                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80"
-                                alt="">
-                        </blockquote>
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
-    </div>
-    <!-- End Testimonials-->
-    <footer class="px-4 pt-12 pb-8 text-white bg-white border-t border-gray-200">
-        <div class="container flex flex-col justify-between max-w-6xl px-4 mx-auto overflow-hidden lg:flex-row">
-            <div class="w-full pl-12 mr-4 text-left lg:w-1/4 sm:text-center sm:pl-0 lg:text-left">
-                <a href="/"
-                    class="flex justify-start block text-left sm:text-center lg:text-left sm:justify-center lg:justify-start">
-                    <span class="flex items-start sm:items-center">
-                        <svg class="w-auto h-6 text-gray-800 fill-current" viewBox="0 0 194 116"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <g fill-rule="evenodd">
-                                <path
-                                    d="M96.869 0L30 116h104l-9.88-17.134H59.64l47.109-81.736zM0 116h19.831L77 17.135 67.088 0z">
-                                </path>
-                                <path d="M87 68.732l9.926 17.143 29.893-51.59L174.15 116H194L126.817 0z"></path>
-                            </g>
-                        </svg>
-                    </span>
+          <div class="col-lg-4 col-md-4 top-social text-center text-md-right">
+            <ul class="list-unstyled">
+              <li>
+                <a title="Facebook" href="https://facebook.com/ciecvalencia">
+                  <span class="social-icon"><i class="fab fa-facebook-f"></i></span>
                 </a>
-                <p class="mt-6 mr-4 text-base text-gray-500">Cámara de Industriales del Estado Carabobo: promoviendo el
-                    desarrollo y crecimiento del sector industrial en Carabobo.</p>
-            </div>
-            <div class="block w-full pl-10 mt-6 text-sm lg:w-3/4 sm:flex lg:mt-0">
-                <ul class="flex flex-col w-full p-0 font-medium text-left text-gray-700 list-none">
-                    <li class="inline-block px-3 py-2 mt-5 font-bold tracking-wide text-gray-800 uppercase md:mt-0">CIEC
-                    </li>
-                    <li><a href="#_"
-                            class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Nuestra
-                            Misión</a></li>
-                    <li><a href="#_"
-                            class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Servicios</a>
-                    </li>
-                    <li><a href="#_"
-                            class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Proyectos</a>
-                    </li>
-                    <li><a href="#_"
-                            class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Contacto</a>
-                    </li>
-                </ul>
-                <ul class="flex flex-col w-full p-0 font-medium text-left text-gray-700 list-none">
-                    <li class="inline-block px-3 py-2 mt-5 font-bold tracking-wide text-gray-800 uppercase md:mt-0">
-                        Contacto
-                    </li>
-                    <li>
-                        <a href="https://maps.app.goo.gl/5b4wrZyw3vkfeETC8" target="_blank" class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">
-                            Dirección: Av. Ernesto Branger, Edificio Cámara de Industriales, Zona Industrial Municipal Norte, Valencia, Carabobo 2003
-                        </a>
-                    </li>
-                    <li>
-                        <a href="tel:+582416170269" class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">
-                            Teléfono: +58 241 6170269
-                        </a>
-                    </li>
-                    <li>
-                        <a href="mailto:contacto@ciec.org.ve" class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">
-                            Correo: contacto@ciec.org.ve
-                        </a>
-                    </li>
-                </ul>
-                    <div class="inline-block px-3 py-2 mt-5 font-bold text-gray-800 uppercase md:mt-0">Síguenos</div>
-                    <div class="flex justify-start pl-4 mt-2">
-                        <a class="flex items-center block mr-6 text-gray-400 no-underline hover:text-gray-600"
-                            target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/CIECValencia">
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M23.998 12c0-6.628-5.372-12-11.999-12C5.372 0 0 5.372 0 12c0 5.988 4.388 10.952 10.124 11.852v-8.384H7.078v-3.469h3.046V9.356c0-3.008 1.792-4.669 4.532-4.669 1.313 0 2.686.234 2.686.234v2.953H15.83c-1.49 0-1.955.925-1.955 1.874V12h3.328l-.532 3.469h-2.796v8.384c5.736-.9 10.124-5.864 10.124-11.853z">
-                                </path>
-                            </svg>
-                        </a>
-                        <a class="flex items-center block mr-6 text-gray-400 no-underline hover:text-gray-600"
-                            target="_blank" rel="noopener noreferrer" href="https://twitter.com/CIECValencia">
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M23.954 4.569a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.691 8.094 4.066 6.13 1.64 3.161a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.061a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.937 4.937 0 004.604 3.417 9.868 9.868 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63a9.936 9.936 0 002.46-2.548l-.047-.02z">
-                                </path>
-                            </svg>
-                        </a>
-                        <a class="flex items-center block text-gray-400 no-underline hover:text-gray-600"
-                            target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/ciecvalencia/">
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.225 1.91 1.225 3.22 0 4.61-2.8 5.63-5.49 5.93.431.373.816 1.104.816 2.222 0 1.604-.01 2.893-.01 3.296 0 .32.22.693.826.577 4.766-1.585 8.205-6.083 8.205-11.384 0-6.627-5.37-12-12-12z">
-                                </path>
-                            </svg> </a>
-                    </div>
-                </div>
-            </div>
+                <a title="Twitter" href="https://twitter.com/ciecvalencia">
+                  <span class="social-icon"><i class="fab fa-twitter"></i></span>
+                </a>
+                <a title="Instagram" href="https://instagram.com/ciecvalencia">
+                  <span class="social-icon"><i class="fab fa-instagram"></i></span>
+                </a>
+                <a title="LinkedIn" href="https://linkedin.com/ciecvalencia">
+                  <span class="social-icon"><i class="fab fa-linkedin"></i></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!--/ Redes Sociales -->
         </div>
+        <!--/ Fila -->
+      </div>
+      <!--/ Contenedor -->
+    </div>
+    <!--/ Barra Superior -->
 
+    <!-- Encabezado -->
+    <header id="header" class="header-one">
+      <div class="bg-white">
+        <div class="container">
+          <div class="logo-area">
+            <div class="row align-items-center">
+              <div class="logo col-lg-3 text-center text-lg-left mb-4 mb-md-5 mb-lg-0">
+                <a class="d-block" href="index.html">
+                  <img loading="lazy" src="/images/logo.svg" alt="CIEC" style="width: 90px; height: auto;">
+                </a>
+              </div><!-- Logo -->
+
+              <div class="col-lg-9 header-right">
+                <ul class="top-info-box">
+                  <li>
+                    <div class="info-box">
+                      <div class="info-box-content">
+                        <p class="info-box-title">Llámanos</p>
+                        <p class="info-box-subtitle">+58 241-123-4567</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="info-box">
+                      <div class="info-box-content">
+                        <p class="info-box-title">Escríbenos</p>
+                        <p class="info-box-subtitle">info@ciec.org.ve</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="last">
+                    <div class="info-box last">
+                      <div class="info-box-content">
+                        <p class="info-box-title">Certificación</p>
+                        <p class="info-box-subtitle">ISO 9001:2017</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="header-get-a-quote">
+                    <a class="btn btn-primary" href="contact.html">Contáctanos</a>
+                  </li>
+                </ul><!-- Info Box -->
+              </div><!-- Header Right -->
+            </div><!-- Fila -->
+          </div><!-- Área del Logo -->
+        </div><!-- Contenedor -->
+      </div>
+
+      <!-- Navegación -->
+      <div class="site-navigation">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <nav class="navbar navbar-expand-lg navbar-dark p-0">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
+                  aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div id="navbar-collapse" class="collapse navbar-collapse">
+                  <ul class="nav navbar-nav mr-auto">
+                    <li class="nav-item dropdown active">
+                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Inicio <i
+                          class="fa fa-angle-down"></i></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li class="active"><a href="index.html">Inicio</a></li>
+                      </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Nosotros <i
+                          class="fa fa-angle-down"></i></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="about.html">Sobre Nosotros</a></li>
+                        <li><a href="team.html">Nuestro Equipo</a></li>
+                        <li><a href="testimonials.html">Testimonios</a></li>
+                      </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Servicios <i
+                          class="fa fa-angle-down"></i></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="services.html">Servicios</a></li>
+                        <li><a href="service-single.html">Detalle de Servicios</a></li>
+                      </ul>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+            <!--/ Columna -->
+          </div>
+          <!--/ Fila -->
+        </div>
+        <!--/ Contenedor -->
+      </div>
+      <!--/ Navegación -->
+    </header>
+    <!--/ Encabezado -->
+
+    <!-- Carrusel de Banner -->
+    <div class="banner-carousel banner-carousel-1 mb-0">
+      <div class="banner-carousel-item" style="background-image:url(images/slider-main/bg1.jpg)">
+        <div class="slider-content">
+          <div class="container h-100">
+            <div class="row align-items-center h-100">
+              <div class="col-md-12 text-center">
+                <h2 class="slide-title" data-animation-in="slideInLeft">Impulsando el Desarrollo Industrial</h2>
+                <h3 class="slide-sub-title" data-animation-in="slideInRight">Cámara de las Industrias del Estado
+                  Carabobo</h3>
+                <p data-animation-in="slideInLeft" data-duration-in="1.2">
+                  <a href="services.html" class="slider btn btn-primary">Nuestros Servicios</a>
+                  <a href="contact.html" class="slider btn btn-primary border">Contáctanos</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="banner-carousel-item" style="background-image:url(images/slider-main/bg2.jpg)">
+        <div class="slider-content text-left">
+          <div class="container h-100">
+            <div class="row align-items-center h-100">
+              <div class="col-md-12">
+                <h2 class="slide-title-box" data-animation-in="slideInDown">Innovación y Excelencia</h2>
+                <h3 class="slide-title" data-animation-in="fadeIn">Comprometidos con el Crecimiento Industrial</h3>
+                <h3 class="slide-sub-title" data-animation-in="slideInLeft">Tu Socio en el Desarrollo</h3>
+                <p data-animation-in="slideInRight">
+                  <a href="services.html" class="slider btn btn-primary border">Nuestros Servicios</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="banner-carousel-item" style="background-image:url(images/slider-main/bg3.jpg)">
+        <div class="slider-content text-right">
+          <div class="container h-100">
+            <div class="row align-items-center h-100">
+              <div class="col-md-12">
+                <h2 class="slide-title" data-animation-in="slideInDown">Conoce Nuestro Equipo</h2>
+                <h3 class="slide-sub-title" data-animation-in="fadeIn">Expertos en Desarrollo Industrial</h3>
+                <p class="slider-description lead" data-animation-in="slideInRight">Trabajamos para impulsar el
+                  crecimiento sostenible de la industria en Carabobo.</p>
+                <div data-animation-in="slideInLeft">
+                  <a href="contact.html" class="slider btn btn-primary" aria-label="contact-with-us">Contáctanos</a>
+                  <a href="about.html" class="slider btn btn-primary border" aria-label="learn-more-about-us">Más
+                    Información</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Carrusel de Banner -->
+
+    <!-- Llamado a la Acción -->
+    <section class="call-to-action-box no-padding">
+      <div class="container">
+        <div class="action-style-box">
+          <div class="row align-items-center">
+            <div class="col-md-8 text-center text-md-left">
+              <div class="call-to-action-text">
+                <h3 class="action-title">Entendemos las necesidades de la industria en Carabobo</h3>
+              </div>
+            </div><!-- Columna -->
+            <div class="col-md-4 text-center text-md-right mt-3 mt-md-0">
+              <div class="call-to-action-btn">
+                <a class="btn btn-dark" href="#">Solicitar Información</a>
+              </div>
+            </div><!-- Columna -->
+          </div><!-- Fila -->
+        </div><!-- Estilo de Acción -->
+      </div><!-- Contenedor -->
+    </section>
+    <!--/ Llamado a la Acción -->
+
+    <!-- Sección de Características -->
+    <section id="ts-features" class="ts-features">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="ts-intro">
+              <h2 class="into-title">Sobre Nosotros</h2>
+              <h3 class="into-sub-title">Impulsando el Desarrollo Industrial</h3>
+              <p>La Cámara de las Industrias del Estado Carabobo (CIEC) es una organización comprometida con el
+                crecimiento y desarrollo sostenible de la industria en la región. Trabajamos para fomentar la innovación,
+                la competitividad y la excelencia en el sector industrial.</p>
+            </div><!-- Intro -->
+
+            <div class="gap-20"></div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="ts-service-box">
+                  <span class="ts-service-icon">
+                    <i class="fas fa-trophy"></i>
+                  </span>
+                  <div class="ts-service-box-content">
+                    <h3 class="service-box-title">Excelencia en el Servicio</h3>
+                  </div>
+                </div><!-- Servicio 1 -->
+              </div><!-- Columna -->
+
+              <div class="col-md-6">
+                <div class="ts-service-box">
+                  <span class="ts-service-icon">
+                    <i class="fas fa-sliders-h"></i>
+                  </span>
+                  <div class="ts-service-box-content">
+                    <h3 class="service-box-title">Alianzas Estratégicas</h3>
+                  </div>
+                </div><!-- Servicio 2 -->
+              </div><!-- Columna -->
+            </div><!-- Fila -->
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="ts-service-box">
+                  <span class="ts-service-icon">
+                    <i class="fas fa-thumbs-up"></i>
+                  </span>
+                  <div class="ts-service-box-content">
+                    <h3 class="service-box-title">Compromiso con la Calidad</h3>
+                  </div>
+                </div><!-- Servicio 1 -->
+              </div><!-- Columna -->
+
+              <div class="col-md-6">
+                <div class="ts-service-box">
+                  <span class="ts-service-icon">
+                    <i class="fas fa-users"></i>
+                  </span>
+                  <div class="ts-service-box-content">
+                    <h3 class="service-box-title">Equipo Profesional</h3>
+                  </div>
+                </div><!-- Servicio 2 -->
+              </div><!-- Columna -->
+            </div><!-- Fila -->
+          </div><!-- Columna -->
+
+          <div class="col-lg-6 mt-4 mt-lg-0">
+            <h3 class="into-sub-title">Nuestros Valores</h3>
+            <p>En la CIEC, nos guiamos por valores fundamentales que nos permiten ofrecer un servicio de calidad y
+              contribuir al desarrollo industrial de Carabobo.</p>
+
+            <div class="accordion accordion-group" id="our-values-accordion">
+              <div class="card">
+                <div class="card-header p-0 bg-transparent" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-block text-left" type="button" data-toggle="collapse"
+                      data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Seguridad
+                    </button>
+                  </h2>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                  data-parent="#our-values-accordion">
+                  <div class="card-body">
+                    Garantizamos la seguridad en todos nuestros procesos y servicios.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header p-0 bg-transparent" id="headingTwo">
+                  <h2 class="mb-0">
+                    <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse"
+                      data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Servicio al Cliente
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#our-values-accordion">
+                  <div class="card-body">
+                    Nos enfocamos en brindar un servicio excepcional a nuestros asociados y clientes.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header p-0 bg-transparent" id="headingThree">
+                  <h2 class="mb-0">
+                    <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse"
+                      data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Integridad
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                  data-parent="#our-values-accordion">
+                  <div class="card-body">
+                    Actuamos con transparencia y ética en todas nuestras operaciones.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--/ Acordeón -->
+          </div><!-- Columna -->
+        </div><!-- Fila -->
+      </div><!-- Contenedor -->
+    </section>
+    <!--/ Sección de Características -->
+
+    <!-- Sección de Hechos -->
+    <section id="facts" class="facts-area dark-bg">
+      <div class="container">
+        <div class="facts-wrapper">
+          <div class="row">
+            <div class="col-md-3 col-sm-6 ts-facts">
+              <div class="ts-facts-img">
+                <img loading="lazy" src="images/icon-image/fact1.png" alt="facts-img">
+              </div>
+              <div class="ts-facts-content">
+                <h2 class="ts-facts-num"><span class="counterUp" data-count="50">0</span></h2>
+                <h3 class="ts-facts-title">Años de Experiencia</h3>
+              </div>
+            </div><!-- Columna -->
+
+            <div class="col-md-3 col-sm-6 ts-facts mt-5 mt-sm-0">
+              <div class="ts-facts-img">
+                <img loading="lazy" src="images/icon-image/fact2.png" alt="facts-img">
+              </div>
+              <div class="ts-facts-content">
+                <h2 class="ts-facts-num"><span class="counterUp" data-count="200">0</span></h2>
+                <h3 class="ts-facts-title">Empresas Asociadas</h3>
+              </div>
+            </div><!-- Columna -->
+
+            <div class="col-md-3 col-sm-6 ts-facts mt-5 mt-md-0">
+              <div class="ts-facts-img">
+                <img loading="lazy" src="images/icon-image/fact3.png" alt="facts-img">
+              </div>
+              <div class="ts-facts-content">
+                <h2 class="ts-facts-num"><span class="counterUp" data-count="500">0</span></h2>
+                <h3 class="ts-facts-title">Proyectos Completados</h3>
+              </div>
+            </div><!-- Columna -->
+
+            <div class="col-md-3 col-sm-6 ts-facts mt-5 mt-md-0">
+              <div class="ts-facts-img">
+                <img loading="lazy" src="images/icon-image/fact4.png" alt="facts-img">
+              </div>
+              <div class="ts-facts-content">
+                <h2 class="ts-facts-num"><span class="counterUp" data-count="10">0</span></h2>
+                <h3 class="ts-facts-title">Premios y Reconocimientos</h3>
+              </div>
+            </div><!-- Columna -->
+          </div><!-- Fila -->
+        </div><!-- Contenedor -->
+      </div><!-- Contenedor -->
+    </section>
+    <!--/ Sección de Hechos -->
+
+    <!-- Sección de Servicios -->
+    <section id="ts-service-area" class="ts-service-area pb-0">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-12">
+            <h2 class="section-title">Especialistas en</h2>
+            <h3 class="section-sub-title">Lo Que Hacemos</h3>
+          </div>
+        </div><!-- Título -->
+
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="ts-service-box d-flex">
+              <div class="ts-service-box-img">
+                <img loading="lazy" src="images/icon-image/service-icon1.png" alt="service-icon">
+              </div>
+              <div class="ts-service-box-info">
+                <h3 class="service-box-title"><a href="#">Asesoría Industrial</a></h3>
+                <p>Brindamos asesoría especializada para el crecimiento y desarrollo de tu empresa.</p>
+              </div>
+            </div><!-- Servicio 1 -->
+
+            <div class="ts-service-box d-flex">
+              <div class="ts-service-box-img">
+                <img loading="lazy" src="images/icon-image/service-icon2.png" alt="service-icon">
+              </div>
+              <div class="ts-service-box-info">
+                <h3 class="service-box-title"><a href="#">Capacitación</a></h3>
+                <p>Ofrecemos programas de capacitación para mejorar las habilidades de tu equipo.</p>
+              </div>
+            </div><!-- Servicio 2 -->
+
+            <div class="ts-service-box d-flex">
+              <div class="ts-service-box-img">
+                <img loading="lazy" src="images/icon-image/service-icon3.png" alt="service-icon">
+              </div>
+              <div class="ts-service-box-info">
+                <h3 class="service-box-title"><a href="#">Innovación Tecnológica</a></h3>
+                <p>Promovemos la adopción de tecnologías innovadoras en la industria.</p>
+              </div>
+            </div><!-- Servicio 3 -->
+          </div><!-- Columna -->
+
+          <div class="col-lg-4 text-center">
+            <img loading="lazy" class="img-fluid" src="images/services/service-center.jpg" alt="service-avater-image">
+          </div><!-- Columna -->
+
+          <div class="col-lg-4 mt-5 mt-lg-0 mb-4 mb-lg-0">
+            <div class="ts-service-box d-flex">
+              <div class="ts-service-box-img">
+                <img loading="lazy" src="images/icon-image/service-icon4.png" alt="service-icon">
+              </div>
+              <div class="ts-service-box-info">
+                <h3 class="service-box-title"><a href="#">Desarrollo Sostenible</a></h3>
+                <p>Fomentamos prácticas industriales sostenibles y responsables.</p>
+              </div>
+            </div><!-- Servicio 4 -->
+
+            <div class="ts-service-box d-flex">
+              <div class="ts-service-box-img">
+                <img loading="lazy" src="images/icon-image/service-icon5.png" alt="service-icon">
+              </div>
+              <div class="ts-service-box-info">
+                <h3 class="service-box-title"><a href="#">Networking</a></h3>
+                <p>Conectamos a las empresas con oportunidades de negocio y colaboración.</p>
+              </div>
+            </div><!-- Servicio 5 -->
+
+            <div class="ts-service-box d-flex">
+              <div class="ts-service-box-img">
+                <img loading="lazy" src="images/icon-image/service-icon6.png" alt="service-icon">
+              </div>
+              <div class="ts-service-box-info">
+                <h3 class="service-box-title"><a href="#">Certificaciones</a></h3>
+                <p>Ayudamos a las empresas a obtener certificaciones de calidad.</p>
+              </div>
+            </div><!-- Servicio 6 -->
+          </div><!-- Columna -->
+        </div><!-- Fila -->
+      </div><!-- Contenedor -->
+    </section>
+    <!--/ Sección de Servicios -->
+
+    <!-- Sección de Proyectos -->
+    <section id="project-area" class="project-area solid-bg">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-lg-12">
+            <h2 class="section-title">Trabajos de Excelencia</h2>
+            <h3 class="section-sub-title">Proyectos Recientes</h3>
+          </div>
+        </div><!-- Título -->
+
+        <div class="row">
+          <div class="col-12">
+            <div class="shuffle-btn-group">
+              <label class="active" for="all">
+                <input type="radio" name="shuffle-filter" id="all" value="all" checked="checked">Mostrar Todos
+              </label>
+              <label for="commercial">
+                <input type="radio" name="shuffle-filter" id="commercial" value="commercial">Comercial
+              </label>
+              <label for="education">
+                <input type="radio" name="shuffle-filter" id="education" value="education">Educación
+              </label>
+              <label for="government">
+                <input type="radio" name="shuffle-filter" id="government" value="government">Gobierno
+              </label>
+              <label for="infrastructure">
+                <input type="radio" name="shuffle-filter" id="infrastructure" value="infrastructure">Infraestructura
+              </label>
+              <label for="residential">
+                <input type="radio" name="shuffle-filter" id="residential" value="residential">Residencial
+              </label>
+              <label for="healthcare">
+                <input type="radio" name="shuffle-filter" id="healthcare" value="healthcare">Salud
+              </label>
+            </div><!-- Filtro de Proyectos -->
+
+            <div class="row shuffle-wrapper">
+              <div class="col-1 shuffle-sizer"></div>
+
+              <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
+                <div class="project-img-container">
+                  <a class="gallery-popup" href="images/projects/project1.jpg" aria-label="project-img">
+                    <img class="img-fluid" src="images/projects/project1.jpg" alt="project-img">
+                    <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                  </a>
+                  <div class="project-item-info">
+                    <div class="project-item-info-content">
+                      <h3 class="project-item-title">
+                        <a href="projects-single.html">Planta Industrial</a>
+                      </h3>
+                      <p class="project-cat">Infraestructura, Industria</p>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- Proyecto 1 -->
+
+              <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;healthcare&quot;]">
+                <div class="project-img-container">
+                  <a class="gallery-popup" href="images/projects/project2.jpg" aria-label="project-img">
+                    <img class="img-fluid" src="images/projects/project2.jpg" alt="project-img">
+                    <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                  </a>
+                  <div class="project-item-info">
+                    <div class="project-item-info-content">
+                      <h3 class="project-item-title">
+                        <a href="projects-single.html">Centro de Innovación</a>
+                      </h3>
+                      <p class="project-cat">Innovación, Tecnología</p>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- Proyecto 2 -->
+
+              <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;infrastructure&quot;,&quot;commercial&quot;]">
+                <div class="project-img-container">
+                  <a class="gallery-popup" href="images/projects/project3.jpg" aria-label="project-img">
+                    <img class="img-fluid" src="images/projects/project3.jpg" alt="project-img">
+                    <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                  </a>
+                  <div class="project-item-info">
+                    <div class="project-item-info-content">
+                      <h3 class="project-item-title">
+                        <a href="projects-single.html">Parque Industrial</a>
+                      </h3>
+                      <p class="project-cat">Infraestructura, Comercial</p>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- Proyecto 3 -->
+            </div><!-- Fila de Proyectos -->
+          </div><!-- Columna -->
+        </div><!-- Fila -->
+      </div><!-- Contenedor -->
+    </section>
+    <!--/ Sección de Proyectos -->
+
+    <!-- Sección de Testimonios -->
+    <section class="content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <h3 class="column-title">Testimonios</h3>
+
+            <div id="testimonial-slide" class="testimonial-slide">
+              <div class="item">
+                <div class="quote-item">
+                  <span class="quote-text">
+                    La CIEC ha sido un aliado estratégico para nuestro crecimiento industrial. Su asesoría y apoyo han
+                    sido fundamentales.
+                  </span>
+                  <div class="quote-item-footer">
+                    <img loading="lazy" class="testimonial-thumb" src="images/clients/testimonial1.png"
+                      alt="testimonial">
+                    <div class="quote-item-info">
+                      <h3 class="quote-author">Juan Pérez</h3>
+                      <span class="quote-subtext">CEO, Industrias Pérez</span>
+                    </div>
+                  </div>
+                </div><!-- Testimonio 1 -->
+              </div>
+
+              <div class="item">
+                <div class="quote-item">
+                  <span class="quote-text">
+                    Gracias a la CIEC, hemos podido implementar tecnologías innovadoras que han mejorado nuestra
+                    productividad.
+                  </span>
+                  <div class="quote-item-footer">
+                    <img loading="lazy" class="testimonial-thumb" src="images/clients/testimonial2.png"
+                      alt="testimonial">
+                    <div class="quote-item-info">
+                      <h3 class="quote-author">María González</h3>
+                      <span class="quote-subtext">Gerente, Tecnologías Avanzadas</span>
+                    </div>
+                  </div>
+                </div><!-- Testimonio 2 -->
+              </div>
+            </div><!-- Carrusel de Testimonios -->
+          </div><!-- Columna -->
+
+          <div class="col-lg-6 mt-5 mt-lg-0">
+            <h3 class="column-title">Clientes Felices</h3>
+
+            <div class="row all-clients">
+              <div class="col-sm-4 col-6">
+                <figure class="clients-logo">
+                  <a href="#!"><img loading="lazy" class="img-fluid" src="images/clients/client1.png"
+                      alt="clients-logo" /></a>
+                </figure>
+              </div><!-- Cliente 1 -->
+
+              <div class="col-sm-4 col-6">
+                <figure class="clients-logo">
+                  <a href="#!"><img loading="lazy" class="img-fluid" src="images/clients/client2.png"
+                      alt="clients-logo" /></a>
+                </figure>
+              </div><!-- Cliente 2 -->
+
+              <div class="col-sm-4 col-6">
+                <figure class="clients-logo">
+                  <a href="#!"><img loading="lazy" class="img-fluid" src="images/clients/client3.png"
+                      alt="clients-logo" /></a>
+                </figure>
+              </div><!-- Cliente 3 -->
+            </div><!-- Fila de Clientes -->
+          </div><!-- Columna -->
+        </div><!-- Fila -->
+      </div><!-- Contenedor -->
+    </section>
+    <!--/ Sección de Testimonios -->
+
+    <!-- Sección de Suscripción -->
+    <section class="subscribe no-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="subscribe-call-to-acton">
+              <h3>¿Necesitas Ayuda?</h3>
+              <h4>+58 241-123-4567</h4>
+            </div>
+          </div><!-- Columna -->
+
+          <div class="col-lg-8">
+            <div class="ts-newsletter row align-items-center">
+              <div class="col-md-5 newsletter-introtext">
+                <h4 class="text-white mb-0">Suscríbete a Nuestro Boletín</h4>
+                <p class="text-white">Recibe las últimas actualizaciones y noticias</p>
+              </div>
+
+              <div class="col-md-7 newsletter-form">
+                <form action="#" method="post">
+                  <div class="form-group">
+                    <label for="newsletter-email" class="content-hidden">Correo Electrónico</label>
+                    <input type="email" name="email" id="newsletter-email" class="form-control form-control-lg"
+                      placeholder="Ingresa tu correo y presiona enter" autocomplete="off">
+                  </div>
+                </form>
+              </div>
+            </div><!-- Newsletter -->
+          </div><!-- Columna -->
+        </div><!-- Fila -->
+      </div><!-- Contenedor -->
+    </section>
+    <!--/ Sección de Suscripción -->
+
+    <!-- Pie de Página -->
+    <footer id="footer" class="footer bg-overlay">
+      <div class="footer-main">
+        <div class="container">
+          <div class="row justify-content-between">
+            <div class="col-lg-4 col-md-6 footer-widget footer-about">
+              <h3 class="widget-title">Sobre Nosotros</h3>
+              <img loading="lazy" class="footer-logo" src="images/logo-ciec.png" alt="CIEC">
+              <p>La Cámara de las Industrias del Estado Carabobo (CIEC) es una organización comprometida con el
+                desarrollo industrial sostenible en la región.</p>
+              <div class="footer-social">
+                <ul>
+                  <li><a href="https://facebook.com/ciecvalencia" aria-label="Facebook"><i
+                        class="fab fa-facebook-f"></i></a></li>
+                  <li><a href="https://twitter.com/ciecvalencia" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                  </li>
+                  <li><a href="https://instagram.com/ciecvalencia" aria-label="Instagram"><i
+                        class="fab fa-instagram"></i></a></li>
+                  <li><a href="https://linkedin.com/ciecvalencia" aria-label="LinkedIn"><i
+                        class="fab fa-linkedin"></i></a></li>
+                </ul>
+              </div><!-- Redes Sociales -->
+            </div><!-- Columna -->
+
+            <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
+              <h3 class="widget-title">Horario de Trabajo</h3>
+              <div class="working-hours">
+                Trabajamos de lunes a viernes para brindarte el mejor servicio. Contáctanos en caso de emergencias.
+                <br><br> Lunes - Viernes: <span class="text-right">8:00 AM - 5:00 PM</span>
+                <br> Sábado: <span class="text-right">9:00 AM - 1:00 PM</span>
+                <br> Domingo y festivos: <span class="text-right">Cerrado</span>
+              </div>
+            </div><!-- Columna -->
+
+            <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
+              <h3 class="widget-title">Servicios</h3>
+              <ul class="list-arrow">
+                <li><a href="service-single.html">Asesoría Industrial</a></li>
+                <li><a href="service-single.html">Capacitación</a></li>
+                <li><a href="service-single.html">Innovación Tecnológica</a></li>
+                <li><a href="service-single.html">Desarrollo Sostenible</a></li>
+                <li><a href="service-single.html">Networking</a></li>
+              </ul>
+            </div><!-- Columna -->
+          </div><!-- Fila -->
+        </div><!-- Contenedor -->
+      </div><!-- Pie de Página Principal -->
+
+      <div class="copyright">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-12">
+              <div class="copyright-info text-center">
+                <span>Copyright &copy; <script>
+                    document.write(new Date().getFullYear())
+                  </script>, Diseñado y Desarrollado por <a href="https://themefisher.com">Themefisher</a></span>
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="copyright-info text-center">
+                <span>Distribuido por <a href="https://themewagon.com/">Themewagon</a></span>
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="footer-menu text-center">
+                <ul class="list-unstyled mb-0">
+                  <li><a href="about.html">Sobre Nosotros</a></li>
+                  <li><a href="team.html">Nuestro Equipo</a></li>
+                  <li><a href="faq.html">Preguntas Frecuentes</a></li>
+                  <li><a href="news-left-sidebar.html">Noticias</a></li>
+                  <li><a href="pricing.html">Precios</a></li>
+                </ul>
+              </div>
+            </div>
+          </div><!-- Fila -->
+
+          <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top position-fixed">
+            <button class="btn btn-primary" title="Volver Arriba">
+              <i class="fa fa-angle-double-up"></i>
+            </button>
+          </div>
+
+        </div><!-- Contenedor -->
+      </div><!-- Copyright -->
     </footer>
+    <!--/ Pie de Página -->
 
-    <!-- a little JS for the mobile nav button -->
-    <script>
-        if (document.getElementById('nav-mobile-btn')) {
-            document.getElementById('nav-mobile-btn').addEventListener('click', function () {
-                if (this.classList.contains('close')) {
-                    document.getElementById('nav').classList.add('hidden');
-                    this.classList.remove('close');
-                } else {
-                    document.getElementById('nav').classList.remove('hidden');
-                    this.classList.add('close');
-                }
-            });
-        }
-    </script>
+    <!-- Archivos Javascript
+  ================================================== -->
+    <!-- jQuery -->
+    <script src="plugins/jQuery/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="plugins/bootstrap/bootstrap.min.js" defer></script>
+    <!-- Slick Carousel -->
+    <script src="plugins/slick/slick.min.js"></script>
+    <script src="plugins/slick/slick-animation.min.js"></script>
+    <!-- Colorbox -->
+    <script src="plugins/colorbox/jquery.colorbox.js"></script>
+    <!-- Shuffle -->
+    <script src="plugins/shuffle/shuffle.min.js" defer></script>
+
+    <!-- Google Map API Key -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>
+    <!-- Google Map Plugin -->
+    <script src="plugins/google-map/map.js" defer></script>
+
+    <!-- Template Custom -->
+    <script src="js/script.js"></script>
+
+  </div><!-- Body inner end -->
 </body>
 
 </html>
